@@ -1,8 +1,14 @@
 plugins {
     id("com.github.ben-manes.versions") version "0.53.0"
     application
+    id("org.sonarqube") version "7.2.3.7755"
 }
-
+sonar {
+    properties {
+        property("sonar.projectKey", "Rimadorio_java-project-61")
+        property("sonar.organization", "rimadorio")
+    }
+}
 application {
     mainClass.set("hexlet.code.App")
 }
@@ -25,5 +31,9 @@ tasks.test {
 }
 
 tasks.getByName("run", JavaExec::class) {
+    standardInput = System.`in`
+}
+
+tasks.run {
     standardInput = System.`in`
 }
