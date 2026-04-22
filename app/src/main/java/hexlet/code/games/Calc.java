@@ -5,7 +5,11 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class Calc {
+    private static final int GAME_NUMBER = 3;
 
+    public static int getGameNumber() {
+        return GAME_NUMBER;
+    }
     public static void calculate() {
         Scanner sc = new Scanner(System.in);
         System.out.println("What is the result of the expression?");

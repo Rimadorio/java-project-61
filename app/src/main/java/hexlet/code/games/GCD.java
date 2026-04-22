@@ -5,7 +5,11 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class GCD {
+    private static final int GAME_NUMBER = 4;
 
+    public static int getGameNumber() {
+        return GAME_NUMBER;
+    }
     public static void commonDivisor() {
         Scanner sc = new Scanner(System.in);
         int count = 0;

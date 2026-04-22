@@ -8,7 +8,12 @@ import java.util.Scanner;
 public class Progression {
     private static final Random RANDOM = new Random();
     private static final int PROGRESSION_LENGTH = 10;
+    private static final int NUMBERS_RANGE = 100;
+    private static final int GAME_NUMBER = 5;
 
+    public static int getGameNumber() {
+        return GAME_NUMBER;
+    }
     public static void progress() {
         Scanner in = new Scanner(System.in);
         int step = 2;
@@ -17,8 +22,8 @@ public class Progression {
         int[] numbers = new int[PROGRESSION_LENGTH];
 
         for (int i = 0; i < Engine.getRoundsCount(); i++) {
-            int dots = RANDOM.nextInt(10);
-            int number = RANDOM.nextInt(100);
+            int dots = RANDOM.nextInt(PROGRESSION_LENGTH);
+            int number = RANDOM.nextInt(NUMBERS_RANGE);
             System.out.print("Question: ");
 
             for (int j = 0; j < numbers.length; j++) {

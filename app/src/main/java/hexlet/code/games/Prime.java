@@ -7,14 +7,20 @@ import java.util.Scanner;
 
 public class Prime {
     private static final Random RANDOM = new Random();
+    private static final int DIVIDE_NUMBER = 3;
+    private static final int RANGE = 100;
+    private static final int GAME_NUMBER = 6;
 
+    public static int getGameNumber() {
+        return GAME_NUMBER;
+    }
     public static boolean isPrime(int number) {
         if (number < 2) {
             return false;
         } else if (number == 2) {
             return true;
         } else {
-            return number % 2 != 0 && number % 3 != 0;
+            return number % 2 != 0 && number % DIVIDE_NUMBER != 0;
         }
     }
 
@@ -26,7 +32,7 @@ public class Prime {
         for (int i = 0; i < Engine.getRoundsCount(); i++) {
 
             System.out.print("Question: ");
-            int randomNumber = RANDOM.nextInt(100);
+            int randomNumber = RANDOM.nextInt(RANGE);
             System.out.println(randomNumber);
 
             System.out.print("Your answer: ");
