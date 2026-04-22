@@ -22,7 +22,7 @@ public final class Engine {
 
     public static void evenCondition(String yesAnswer, String noAnswer) {
         System.out.println("'" + yesAnswer + "' is wrong answer ;(. Correct answer was '" + noAnswer + "'.\n" // NOSONAR
-                + "Let's try again, " + Cli.getName());
+                + "Let's try again, " + Cli.getName() + "!");
     }
 
     public static void calcCondition(int answer, int result) {
