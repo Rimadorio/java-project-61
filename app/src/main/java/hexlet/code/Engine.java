@@ -11,9 +11,6 @@ public class Engine {
         System.out.println("Congratulations, " + Cli.getName() + "!");
     }
 
-    public static void incorrect() {
-        System.out.println("Congratulations, " + Cli.getName() + "!");
-    }
 
     public static void correct() {
         System.out.println("Correct!");

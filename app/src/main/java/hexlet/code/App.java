@@ -1,8 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
+import hexlet.code.games.*;
 
 import java.util.Scanner;
 
@@ -13,6 +11,8 @@ public class App {
                 + "2 - Even\n"
                 + "3 - Calc\n"
                 + "4 - GCD\n"
+                + "5 - Progression\n"
+                + "6 - Prime\n"
                 + "0 - Exit");
         Scanner scan = new Scanner(System.in);
         int gameNumber = scan.nextInt();
@@ -34,6 +34,16 @@ public class App {
         if (gameNumber == 4) {
             Cli.greeting(gameNumber);
             GCD.commonDivisor();
+        }
+
+        if (gameNumber == 5) {
+            Cli.greeting(gameNumber);
+            Progression.progress();
+        }
+
+        if (gameNumber == 6) {
+            Cli.greeting(gameNumber);
+            Prime.primeNumber();
         }
         scan.close();
     }
