@@ -2,11 +2,12 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
+import java.security.SecureRandom;
+
 import java.util.Scanner;
 
 public final class Prime {
-    private static final Random RANDOM = new Random();
+    private static final SecureRandom RANDOM = new SecureRandom();
     private static final int DIVIDE_NUMBER = 3;
     private static final int RANGE = 100;
     private static final int GAME_NUMBER = 6;

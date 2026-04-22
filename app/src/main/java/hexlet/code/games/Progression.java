@@ -2,11 +2,12 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
+import java.security.SecureRandom;
+
 import java.util.Scanner;
 
 public final class Progression {
-    private static final Random RANDOM = new Random();
+    private static final SecureRandom RANDOM = new SecureRandom();
     private static final int PROGRESSION_LENGTH = 10;
     private static final int NUMBERS_RANGE = 100;
     private static final int GAME_NUMBER = 5;
