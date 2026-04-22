@@ -4,25 +4,30 @@ import hexlet.code.Engine;
 
 import java.util.Scanner;
 
-public class Even {
+public final class Even {
     private static final int GAME_NUMBER = 2;
 
     public static int getGameNumber() {
         return GAME_NUMBER;
     }
+
+    private Even() {
+        throw new UnsupportedOperationException("Utility class cannot be instantiated");
+    }
+
     public static void gameEven() {
         Scanner sc = new Scanner(System.in);
         int count = 0;
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'."); // NOSONAR
         String yesAnswer = "yes";
         String noAnswer = "no";
         for (int i = 0; i < Engine.getRoundsCount(); i++) {
-            System.out.print("Question: ");
+            System.out.print("Question: "); // NOSONAR
             int number = sc.nextInt();
-            System.out.println(number);
-            System.out.print("Your answer: ");
+            System.out.println(number); // NOSONAR
+            System.out.print("Your answer: "); // NOSONAR
             String answer = sc.next();
-            System.out.println(answer);
+            System.out.println(answer); // NOSONAR
 
             if ((answer.equals(yesAnswer) && number % 2 == 0) || (answer.equals(noAnswer) && number % 2 != 0)) {
                 Engine.correct();

@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Prime {
+public final class Prime {
     private static final Random RANDOM = new Random();
     private static final int DIVIDE_NUMBER = 3;
     private static final int RANGE = 100;
@@ -14,6 +14,11 @@ public class Prime {
     public static int getGameNumber() {
         return GAME_NUMBER;
     }
+
+    private Prime() {
+        throw new UnsupportedOperationException("Utility class cannot be instantiated");
+    }
+
     public static boolean isPrime(int number) {
         if (number < 2) {
             return false;
@@ -26,18 +31,18 @@ public class Prime {
 
     public static void primeNumber() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'."); // NOSONAR
         int count = 0;
 
         for (int i = 0; i < Engine.getRoundsCount(); i++) {
 
-            System.out.print("Question: ");
+            System.out.print("Question: "); // NOSONAR
             int randomNumber = RANDOM.nextInt(RANGE);
-            System.out.println(randomNumber);
+            System.out.println(randomNumber); // NOSONAR
 
-            System.out.print("Your answer: ");
+            System.out.print("Your answer: "); // NOSONAR
             String answer = input.nextLine();
-            System.out.println();
+            System.out.println(); // NOSONAR
             if (answer.equals("yes") && isPrime(randomNumber)
                     || answer.equals("no") && !isPrime(randomNumber)) {
                 Engine.correct();
