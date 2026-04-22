@@ -2,9 +2,11 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public final class Even {
+    private static final Random RANDOM = new Random();
     private static final int GAME_NUMBER = 2;
 
     public static int getGameNumber() {
@@ -23,7 +25,7 @@ public final class Even {
         String noAnswer = "no";
         for (int i = 0; i < Engine.getRoundsCount(); i++) {
             System.out.print("Question: "); // NOSONAR
-            int number = sc.nextInt();
+            int number = RANDOM.nextInt();
             System.out.println(number); // NOSONAR
             System.out.print("Your answer: "); // NOSONAR
             String answer = sc.next();
