@@ -35,6 +35,4 @@ tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
 }
 
-tasks.run {
-    standardInput = System.`in`
-}
+
