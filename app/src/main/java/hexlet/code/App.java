@@ -20,33 +20,25 @@ public class App {
                 + "0 - Exit");
         Scanner scan = new Scanner(System.in);
         int gameNumber = scan.nextInt();
-
-        if (gameNumber == 1) {
-            Cli.greeting(gameNumber);
-        }
+        Cli.greeting(gameNumber);
 
         if (gameNumber == Even.getGameNumber()) {
-            Cli.greeting(gameNumber);
             Even.gameEven();
         }
 
         if (gameNumber == Calc.getGameNumber()) {
-            Cli.greeting(gameNumber);
             Calc.calculate();
         }
 
         if (gameNumber == GCD.getGameNumber()) {
-            Cli.greeting(gameNumber);
             GCD.commonDivisor();
         }
 
         if (gameNumber == Progression.getGameNumber()) {
-            Cli.greeting(gameNumber);
             Progression.progress();
         }
 
         if (gameNumber == Prime.getGameNumber()) {
-            Cli.greeting(gameNumber);
             Prime.primeNumber();
         }
         scan.close();
