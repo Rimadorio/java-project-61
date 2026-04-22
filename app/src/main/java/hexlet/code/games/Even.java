@@ -25,7 +25,7 @@ public final class Even {
         String noAnswer = "no";
         for (int i = 0; i < Engine.getRoundsCount(); i++) {
             System.out.print("Question: "); // NOSONAR
-            int number = RANDOM.nextInt();
+            int number = RANDOM.nextInt(0, Integer.MAX_VALUE);
             System.out.println(number); // NOSONAR
             System.out.print("Your answer: "); // NOSONAR
             String answer = sc.next();
