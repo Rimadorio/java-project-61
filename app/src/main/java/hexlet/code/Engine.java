@@ -27,7 +27,7 @@ public final class Engine {
 
     public static void calcCondition(int answer, int result) {
         System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + result + "'.\n" // NOSONAR
-                + "Let's try again, " + Cli.getName());
+                + "Let's try again, " + Cli.getName() + "!");
     }
 
 }
