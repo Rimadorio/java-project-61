@@ -35,10 +35,10 @@ public final class Even {
             if ((answer.equals(yesAnswer) && number % 2 == 0) || (answer.equals(noAnswer) && number % 2 != 0)) {
                 Engine.correct();
             } else {
-                if ((answer.equals(yesAnswer) && number % 2 != 0)) {
+                if (answer.equals(yesAnswer)) {
                     Engine.evenCondition(yesAnswer, noAnswer);
                     return;
-                } else if ((answer.equals(noAnswer) && number % 2 == 0)) {
+                } else if (answer.equals(noAnswer)) {
                     Engine.evenCondition(noAnswer, yesAnswer);
                     return;
                 }

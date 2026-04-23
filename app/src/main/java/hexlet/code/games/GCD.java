@@ -18,7 +18,7 @@ public final class GCD {
     public static void commonDivisor() {
         Scanner sc = new Scanner(System.in);
         int count = 0;
-        int temp = 0;
+        int temp;
 
         System.out.println("Find the greatest common divisor of given numbers."); // NOSONAR
 

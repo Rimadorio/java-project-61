@@ -22,7 +22,7 @@ public final class Calc {
         int count = 0;
 
         for (int i = 0; i < Engine.getRoundsCount(); i++) {
-            System.out.println("Question: "); // NOSONAR
+            System.out.print("Question: "); // NOSONAR
 
             int firstNumber = RANDOM.nextInt();
             int secondNumber = RANDOM.nextInt();
