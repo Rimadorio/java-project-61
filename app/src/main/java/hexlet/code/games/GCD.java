@@ -29,7 +29,7 @@ public final class GCD {
             int firstNumber = RANDOM.nextInt(0, Integer.MAX_VALUE);
             int secondNumber = RANDOM.nextInt(0, Integer.MAX_VALUE);
             System.out.println(firstNumber + " " + secondNumber); // NOSONAR
-            
+
             while (secondNumber != 0) {
                 temp = secondNumber;
                 secondNumber = firstNumber % secondNumber;

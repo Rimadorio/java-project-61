@@ -27,7 +27,7 @@ public final class Calc {
 
             int firstNumber = RANDOM.nextInt(0, NUMBERS_RANGE);
             int secondNumber = RANDOM.nextInt(0, NUMBERS_RANGE);
-            char [] symbols = {'+', '-', '*'};
+            char[] symbols = {'+', '-', '*'};
             char randomChar = symbols[RANDOM.nextInt(symbols.length)];
             int result;
 
@@ -38,7 +38,7 @@ public final class Calc {
             } else {
                 result = firstNumber - secondNumber;
             }
-            System.out.println(firstNumber + " " + randomChar + " " + secondNumber);// NOSONAR
+            System.out.println(firstNumber + " " + randomChar + " " + secondNumber); // NOSONAR
             System.out.println("Your answer: "); // NOSONAR
             int answer = Integer.parseInt(sc.nextLine());
             if (answer == result) {
