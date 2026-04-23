@@ -2,9 +2,11 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import java.security.SecureRandom;
 import java.util.Scanner;
 
 public final class Calc {
+    private static final SecureRandom RANDOM = new SecureRandom();
     private static final int GAME_NUMBER = 3;
 
     public static int getGameNumber() {
@@ -21,23 +23,23 @@ public final class Calc {
 
         for (int i = 0; i < Engine.getRoundsCount(); i++) {
             System.out.println("Question: "); // NOSONAR
-            String expression = sc.nextLine();
-            String[] expressions = expression.split(" ");
-            int firstNumber = Integer.parseInt(expressions[0]);
-            int secondNumber = Integer.parseInt(expressions[2]);
-            int result = 0;
 
-            if (expressions[1].equals("*")) {
+            int firstNumber = RANDOM.nextInt();
+            int secondNumber = RANDOM.nextInt();
+            char [] symbols = {'+', '-', '*'};
+            char randomChar = symbols[RANDOM.nextInt(symbols.length)];
+            int result;
+
+            if (randomChar == '*') {
                 result = firstNumber * secondNumber;
-            } else if (expressions[1].equals("+")) {
+            } else if (randomChar == '+') {
                 result = firstNumber + secondNumber;
-            } else if (expressions[1].equals("-")) {
+            } else {
                 result = firstNumber - secondNumber;
             }
-
+            System.out.println(firstNumber + " " + randomChar + " " + secondNumber);// NOSONAR
             System.out.println("Your answer: "); // NOSONAR
             int answer = Integer.parseInt(sc.nextLine());
-
             if (answer == result) {
                 Engine.correct();
                 count++;
