@@ -2,10 +2,12 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import java.security.SecureRandom;
 import java.util.Scanner;
 
 public final class GCD {
     private static final int GAME_NUMBER = 4;
+    private static final SecureRandom RANDOM = new SecureRandom();
 
     public static int getGameNumber() {
         return GAME_NUMBER;
@@ -23,11 +25,9 @@ public final class GCD {
         System.out.println("Find the greatest common divisor of given numbers."); // NOSONAR
 
         for (int i = 0; i < Engine.getRoundsCount(); i++) {
-            System.out.println("Question: "); // NOSONAR
-            String expression = sc.nextLine();
-            String[] expressions = expression.split(" ");
-            int firstNumber = Integer.parseInt(expressions[0]);
-            int secondNumber = Integer.parseInt(expressions[1]);
+            System.out.print("Question: "); // NOSONAR
+            int firstNumber = RANDOM.nextInt(0, Integer.MAX_VALUE);
+            int secondNumber = RANDOM.nextInt(0, Integer.MAX_VALUE);
 
             while (secondNumber != 0) {
                 temp = secondNumber;
