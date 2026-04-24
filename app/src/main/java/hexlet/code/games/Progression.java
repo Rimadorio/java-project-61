@@ -3,61 +3,59 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 import java.security.SecureRandom;
-
-import java.util.Scanner;
+import java.util.Arrays;
 
 public final class Progression {
     private static final SecureRandom RANDOM = new SecureRandom();
     private static final int PROGRESSION_LENGTH = 10;
     private static final int NUMBERS_RANGE = 100;
-    private static final int GAME_NUMBER = 5;
-
-    public static int getGameNumber() {
-        return GAME_NUMBER;
-    }
+    public static final int GAME_NUMBER = 5;
 
     private Progression() {
         throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
 
+    public static String[] progressionCalculation(String[] numbers, int number, int step, int dots) {
+
+        for (int j = 0; j < numbers.length; j++) {
+            if (j == dots) {
+                numbers[j] = ".." + " ";
+            } else {
+                numbers[j] = (number + step * j) + " ";
+            }
+        }
+        return numbers;
+    }
+
+    public static String progressionAnswer(String[] numbers, int number, int step, int dots) {
+        String answer = null;
+        for (int j = 0; j < numbers.length; j++) {
+            if (j == dots) {
+                answer = numbers[j];
+            } else {
+                numbers[j] = (number + step * j) + " ";
+            }
+        }
+        return answer;
+    }
+
+
     public static void progress() {
-        Scanner in = new Scanner(System.in);
         int step = 2;
-        int count = 0;
-        System.out.println("What number is missing in the progression?"); // NOSONAR
-        int[] numbers = new int[PROGRESSION_LENGTH];
+        String[][] rounds = new String[Engine.getRoundsCount()][2];
+        String gameRule = "What number is missing in the progression?";
+        String[] numbers = new String[PROGRESSION_LENGTH];
 
         for (int i = 0; i < Engine.getRoundsCount(); i++) {
             int dots = RANDOM.nextInt(PROGRESSION_LENGTH);
             int number = RANDOM.nextInt(NUMBERS_RANGE);
-            System.out.print("Question: "); // NOSONAR
+            String question = Arrays.toString(progressionCalculation(numbers, number, step, dots));
+            String correctAnswer = progressionAnswer(numbers, number, step, dots);
 
-            for (int j = 0; j < numbers.length; j++) {
-                numbers[j] = number + step * j;
-                if (j == dots) {
-                    numbers[j] = number + step * j;
-                    System.out.print(".." + " "); // NOSONAR
-                } else {
-                    System.out.print(numbers[j] + " "); // NOSONAR
-                }
-            }
-            System.out.println(); // NOSONAR
-            System.out.print("Your answer: "); // NOSONAR
-            int answer = in.nextInt();
-            System.out.println(answer); // NOSONAR
-
-            if (answer == numbers[dots]) {
-                Engine.correct();
-                count++;
-            } else {
-                Engine.calcCondition(answer, numbers[dots]);
-                return;
-            }
-
-            if (count == Engine.getRoundsCount()) {
-                Engine.congrats();
-            }
+            rounds[i][0] = question;
+            rounds[i][1] = correctAnswer;
         }
+        Engine.runGame(gameRule, rounds);
     }
 }
 

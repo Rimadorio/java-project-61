@@ -3,56 +3,45 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 import java.security.SecureRandom;
-import java.util.Scanner;
+
 
 public final class Calc {
     private static final SecureRandom RANDOM = new SecureRandom();
-    private static final int GAME_NUMBER = 3;
+    public static final int GAME_NUMBER = 3;
     private static final int NUMBERS_RANGE = 1000;
 
-    public static int getGameNumber() {
-        return GAME_NUMBER;
-    }
+
     private Calc() {
         throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
 
+    public static int expressionResult(char symbol, int firstNumber, int secondNumber) {
+        int result;
+        if (symbol == '*') {
+            result = firstNumber * secondNumber;
+        } else if (symbol == '+') {
+            result = firstNumber + secondNumber;
+        } else {
+            result = firstNumber - secondNumber;
+        }
+        return result;
+    }
+
     public static void calculate() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("What is the result of the expression?"); // NOSONAR
-        int count = 0;
+        String[][] rounds = new String[Engine.getRoundsCount()][2];
+        String gameRule = "What is the result of the expression?";
 
         for (int i = 0; i < Engine.getRoundsCount(); i++) {
-            System.out.print("Question: "); // NOSONAR
-
             int firstNumber = RANDOM.nextInt(0, NUMBERS_RANGE);
             int secondNumber = RANDOM.nextInt(0, NUMBERS_RANGE);
             char[] symbols = {'+', '-', '*'};
             char randomChar = symbols[RANDOM.nextInt(symbols.length)];
-            int result;
-
-            if (randomChar == '*') {
-                result = firstNumber * secondNumber;
-            } else if (randomChar == '+') {
-                result = firstNumber + secondNumber;
-            } else {
-                result = firstNumber - secondNumber;
-            }
-            System.out.println(firstNumber + " " + randomChar + " " + secondNumber); // NOSONAR
-            System.out.println("Your answer: "); // NOSONAR
-            int answer = Integer.parseInt(sc.nextLine());
-            if (answer == result) {
-                Engine.correct();
-                count++;
-            } else {
-                Engine.calcCondition(answer, result);
-                return;
-            }
+            String question = firstNumber + " " + randomChar + " " + secondNumber;
+            String correctAnswer = String.valueOf(expressionResult(randomChar, firstNumber, secondNumber));
+            rounds[i][0] = question;
+            rounds[i][1] = correctAnswer;
         }
-
-        if (count == Engine.getRoundsCount()) {
-            Engine.congrats();
-        }
-
+        Engine.runGame(gameRule, rounds);
     }
 }
+

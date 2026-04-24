@@ -12,35 +12,25 @@ public class App {
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.\n" // NOSONAR
                 + "1 - Greet\n"
-                + Even.getGameNumber() + " - Even\n"
-                + Calc.getGameNumber() + " - Calc\n"
-                + GCD.getGameNumber() + " - GCD\n"
-                + Progression.getGameNumber() + " - Progression\n"
-                + Prime.getGameNumber() + " - Prime\n"
+                + Even.GAME_NUMBER + " - Even\n"
+                + Calc.GAME_NUMBER + " - Calc\n"
+                + GCD.GAME_NUMBER + " - GCD\n"
+                + Progression.GAME_NUMBER + " - Progression\n"
+                + Prime.GAME_NUMBER + " - Prime\n"
                 + "0 - Exit");
         Scanner scan = new Scanner(System.in);
         int gameNumber = scan.nextInt();
         Cli.greeting(gameNumber);
 
-        if (gameNumber == Even.getGameNumber()) {
-            Even.gameEven();
+        switch (gameNumber) {
+            case Even.GAME_NUMBER: Even.gameEven(); break;
+            case Calc.GAME_NUMBER: Calc.calculate(); break;
+            case GCD.GAME_NUMBER: GCD.commonDivisor(); break;
+            case Progression.GAME_NUMBER: Progression.progress(); break;
+            case Prime.GAME_NUMBER: Prime.primeNumber(); break;
+            default: break;
         }
 
-        if (gameNumber == Calc.getGameNumber()) {
-            Calc.calculate();
-        }
-
-        if (gameNumber == GCD.getGameNumber()) {
-            GCD.commonDivisor();
-        }
-
-        if (gameNumber == Progression.getGameNumber()) {
-            Progression.progress();
-        }
-
-        if (gameNumber == Prime.getGameNumber()) {
-            Prime.primeNumber();
-        }
         scan.close();
     }
 }

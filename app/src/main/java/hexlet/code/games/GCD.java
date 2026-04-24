@@ -3,56 +3,40 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 import java.security.SecureRandom;
-import java.util.Scanner;
 
 public final class GCD {
-    private static final int GAME_NUMBER = 4;
+    public static final int GAME_NUMBER = 4;
     private static final SecureRandom RANDOM = new SecureRandom();
-
-    public static int getGameNumber() {
-        return GAME_NUMBER;
-    }
 
     private GCD() {
         throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
 
-    public static void commonDivisor() {
-        Scanner sc = new Scanner(System.in);
-        int count = 0;
+    public static int gcdCalculation(int firstNumber, int secondNumber) {
         int temp;
+        while (secondNumber != 0) {
+            temp = secondNumber;
+            secondNumber = firstNumber % secondNumber;
+            firstNumber = temp;
+        }
+        return firstNumber;
+    }
 
-        System.out.println("Find the greatest common divisor of given numbers."); // NOSONAR
+    public static void commonDivisor() {
+        String[][] rounds = new String[Engine.getRoundsCount()][2];
+        String gameRule = "Find the greatest common divisor of given numbers.";
 
         for (int i = 0; i < Engine.getRoundsCount(); i++) {
-            System.out.print("Question: "); // NOSONAR
+
             int firstNumber = RANDOM.nextInt(0, Integer.MAX_VALUE);
             int secondNumber = RANDOM.nextInt(0, Integer.MAX_VALUE);
-            System.out.println(firstNumber + " " + secondNumber); // NOSONAR
+            String question = firstNumber + " " + secondNumber;
+            String correctAnswer = String.valueOf(gcdCalculation(firstNumber, secondNumber));
 
-            while (secondNumber != 0) {
-                temp = secondNumber;
-                secondNumber = firstNumber % secondNumber;
-                firstNumber = temp;
-            }
-
-            System.out.println("Your answer: "); // NOSONAR
-            int answer = Integer.parseInt(sc.nextLine());
-
-            if (answer == firstNumber) {
-                Engine.correct();
-                count++;
-            } else {
-                Engine.calcCondition(answer, firstNumber);
-                return;
-            }
-
-            if (count == Engine.getRoundsCount()) {
-                Engine.congrats();
-            }
-
+            rounds[i][0] = question;
+            rounds[i][1] = correctAnswer;
         }
-
+        Engine.runGame(gameRule, rounds);
     }
 }
 
