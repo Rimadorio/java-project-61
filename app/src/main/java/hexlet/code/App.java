@@ -20,14 +20,14 @@ public class App {
                 + "0 - Exit");
         Scanner scan = new Scanner(System.in);
         int gameNumber = scan.nextInt();
-        Cli.greeting(gameNumber);
 
         switch (gameNumber) {
-            case Even.GAME_NUMBER: Even.gameEven(); break;
-            case Calc.GAME_NUMBER: Calc.calculate(); break;
-            case GCD.GAME_NUMBER: GCD.commonDivisor(); break;
-            case Progression.GAME_NUMBER: Progression.progress(); break;
-            case Prime.GAME_NUMBER: Prime.primeNumber(); break;
+            case 1: Cli.greeting(gameNumber); break;
+            case Even.GAME_NUMBER: Cli.greeting(gameNumber); Even.gameEven(); break;
+            case Calc.GAME_NUMBER: Cli.greeting(gameNumber); Calc.calculate(); break;
+            case GCD.GAME_NUMBER: Cli.greeting(gameNumber); GCD.commonDivisor(); break;
+            case Progression.GAME_NUMBER: Cli.greeting(gameNumber); Progression.progress(); break;
+            case Prime.GAME_NUMBER: Cli.greeting(gameNumber); Prime.primeNumber(); break;
             default: break;
         }
 
