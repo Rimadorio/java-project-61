@@ -3,7 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 import java.security.SecureRandom;
-import java.util.Arrays;
 
 public final class Progression {
     private static final SecureRandom RANDOM = new SecureRandom();
@@ -15,7 +14,7 @@ public final class Progression {
         throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
 
-    public static String[] progressionCalculation(String[] numbers, int number, int step, int dots) {
+    public static String progressionCalculation(String[] numbers, int number, int step, int dots) {
 
         for (int j = 0; j < numbers.length; j++) {
             if (j == dots) {
@@ -24,14 +23,16 @@ public final class Progression {
                 numbers[j] = (number + step * j) + " ";
             }
         }
-        return numbers;
+        return String.join("", numbers);
+
     }
 
     public static String progressionAnswer(String[] numbers, int number, int step, int dots) {
         String answer = null;
         for (int j = 0; j < numbers.length; j++) {
             if (j == dots) {
-                answer = numbers[j];
+                numbers[j] = (number + step * j) + " ";
+                answer = numbers[j].trim();
             } else {
                 numbers[j] = (number + step * j) + " ";
             }
@@ -49,8 +50,9 @@ public final class Progression {
         for (int i = 0; i < Engine.getRoundsCount(); i++) {
             int dots = RANDOM.nextInt(PROGRESSION_LENGTH);
             int number = RANDOM.nextInt(NUMBERS_RANGE);
-            String question = Arrays.toString(progressionCalculation(numbers, number, step, dots));
             String correctAnswer = progressionAnswer(numbers, number, step, dots);
+            String question = progressionCalculation(numbers, number, step, dots);
+
 
             rounds[i][0] = question;
             rounds[i][1] = correctAnswer;
