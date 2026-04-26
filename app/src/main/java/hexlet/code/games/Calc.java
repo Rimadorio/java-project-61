@@ -27,7 +27,7 @@ public final class Calc {
         return result;
     }
 
-    public static void calculate() {
+    public static void calculate(String playerName) {
         String[][] rounds = new String[Engine.getRoundsCount()][2];
         String gameRule = "What is the result of the expression?";
 
@@ -41,7 +41,7 @@ public final class Calc {
             rounds[i][0] = question;
             rounds[i][1] = correctAnswer;
         }
-        Engine.runGame(gameRule, rounds);
+        Engine.runGame(gameRule, rounds, playerName);
     }
 }
 

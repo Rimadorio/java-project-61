@@ -27,7 +27,7 @@ public final class Prime {
     }
 
 
-    public static void primeNumber() {
+    public static void primeNumber(String playerName) {
         String gameRule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] rounds = new String[Engine.getRoundsCount()][2];
 
@@ -39,7 +39,7 @@ public final class Prime {
             rounds[i][0] = question;
             rounds[i][1] = correctAnswer;
         }
-        Engine.runGame(gameRule, rounds);
+        Engine.runGame(gameRule, rounds, playerName);
     }
 }
 

@@ -12,12 +12,15 @@ public final class Cli {
         System.out.println("Your choice: " + number + "\n" // NOSONAR
                 + "\n"
                 + "Welcome to the Brain Games!");
-        Scanner scanner = new Scanner(System.in);
         System.out.print("May I have your name? "); // NOSONAR
-        String name = scanner.nextLine();
-        System.out.println(name); // NOSONAR
-        System.out.println("Hello, " + name + "!"); // NOSONAR
-        return name;
+
+        Scanner scanner = new Scanner(System.in);
+        String playerName = scanner.next();
+
+        System.out.println(playerName); // NOSONAR
+        System.out.println("Hello, " + playerName + "!"); // NOSONAR
+
+        return playerName;
     }
 }
 

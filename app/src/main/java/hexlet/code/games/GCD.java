@@ -22,7 +22,7 @@ public final class GCD {
         return firstNumber;
     }
 
-    public static void commonDivisor() {
+    public static void commonDivisor(String playerName) {
         String[][] rounds = new String[Engine.getRoundsCount()][2];
         String gameRule = "Find the greatest common divisor of given numbers.";
 
@@ -36,7 +36,7 @@ public final class GCD {
             rounds[i][0] = question;
             rounds[i][1] = correctAnswer;
         }
-        Engine.runGame(gameRule, rounds);
+        Engine.runGame(gameRule, rounds, playerName);
     }
 }
 

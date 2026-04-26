@@ -40,7 +40,7 @@ public final class Progression {
     }
 
 
-    public static void progress() {
+    public static void progress(String playerName) {
         int step = 2;
         String[][] rounds = new String[Engine.getRoundsCount()][2];
         String gameRule = "What number is missing in the progression?";
@@ -55,7 +55,7 @@ public final class Progression {
             rounds[i][0] = question;
             rounds[i][1] = correctAnswer;
         }
-        Engine.runGame(gameRule, rounds);
+        Engine.runGame(gameRule, rounds, playerName);
     }
 }
 

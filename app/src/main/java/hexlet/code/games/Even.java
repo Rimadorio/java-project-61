@@ -13,7 +13,7 @@ public final class Even {
         throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
 
-    public static void gameEven() {
+    public static void gameEven(String playerName) {
         String[][] rounds = new String[Engine.getRoundsCount()][2];
         String gameRule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
@@ -25,7 +25,7 @@ public final class Even {
             rounds[i][0] = question;
             rounds[i][1] = correctAnswer;
         }
-        Engine.runGame(gameRule, rounds);
+        Engine.runGame(gameRule, rounds, playerName);
     }
 }
 

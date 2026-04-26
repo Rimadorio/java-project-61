@@ -13,7 +13,7 @@ public final class Engine {
         throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
 
-    public static void runGame(String gameRule, String[][] rounds) {
+    public static void runGame(String gameRule, String[][] rounds, String playerName) {
         System.out.println(gameRule);  // NOSONAR
         Scanner sc = new Scanner(System.in);
 
@@ -27,12 +27,12 @@ public final class Engine {
                 System.out.println("Correct!"); // NOSONAR
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" // NOSONAR
-                        + correctAnswer + "'." + "Let's try again, " + Cli.greeting(0) + "!");
+                        + correctAnswer + "'.\n" + "Let's try again, " + playerName + "!");
                 sc.close();
                 return;
             }
         }
-        System.out.println("Congratulations, " + Cli.greeting(0) + "!");  // NOSONAR
+        System.out.println("Congratulations, " + playerName + "!");  // NOSONAR
         sc.close();
     }
 }
