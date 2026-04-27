@@ -7,10 +7,9 @@ import java.security.SecureRandom;
 
 public final class Even {
     private static final SecureRandom RANDOM = new SecureRandom();
-    public static final int GAME_NUMBER = 2;
 
     private Even() {
-        throw new UnsupportedOperationException("Utility class cannot be instantiated");
+        System.out.println("Utility class cannot be instantiated");
     }
 
     public static void gameEven(String playerName) {

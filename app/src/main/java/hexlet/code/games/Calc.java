@@ -7,12 +7,11 @@ import java.security.SecureRandom;
 
 public final class Calc {
     private static final SecureRandom RANDOM = new SecureRandom();
-    public static final int GAME_NUMBER = 3;
     private static final int NUMBERS_RANGE = 1000;
 
 
     private Calc() {
-        throw new UnsupportedOperationException("Utility class cannot be instantiated");
+        System.out.println("Utility class cannot be instantiated");
     }
 
     public static int expressionResult(char symbol, int firstNumber, int secondNumber) {

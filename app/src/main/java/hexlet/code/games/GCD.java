@@ -5,11 +5,10 @@ import hexlet.code.Engine;
 import java.security.SecureRandom;
 
 public final class GCD {
-    public static final int GAME_NUMBER = 4;
     private static final SecureRandom RANDOM = new SecureRandom();
 
     private GCD() {
-        throw new UnsupportedOperationException("Utility class cannot be instantiated");
+        System.out.println("Utility class cannot be instantiated");
     }
 
     public static int gcdCalculation(int firstNumber, int secondNumber) {

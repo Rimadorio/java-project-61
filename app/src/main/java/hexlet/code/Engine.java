@@ -10,7 +10,7 @@ public final class Engine {
     }
 
     private Engine() {
-        throw new UnsupportedOperationException("Utility class cannot be instantiated");
+        System.out.println("Utility class cannot be instantiated");
     }
 
     public static void runGame(String gameRule, String[][] rounds, String playerName) {
