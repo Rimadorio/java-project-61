@@ -48,7 +48,7 @@ public class App {
                 Prime.primeNumber(Cli.greeting(gameNumber));
                 break;
             default:
-                System.out.println("Exit"); // NOSONAR
+                System.out.println("Your choice is 0. Exiting Brain games."); // NOSONAR
                 break;
         }
 

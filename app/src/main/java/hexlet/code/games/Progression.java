@@ -14,10 +14,10 @@ public final class Progression {
         System.out.println("Utility class cannot be instantiated"); // NOSONAR
     }
 
-    public static int[] progressionCalculation(int[] numbers, int number, int step) {
+    public static String[] progressionCalculation(String[] numbers, int number, int step) {
 
         for (int j = 0; j < numbers.length; j++) {
-            numbers[j] = (number + step * j);
+            numbers[j] = String.valueOf((number + step * j));
         }
         return numbers;
     }
@@ -26,23 +26,18 @@ public final class Progression {
         int step = 2;
         String[][] rounds = new String[Engine.getRoundsCount()][2];
         String gameRule = "What number is missing in the progression?";
-        int[] numbers = new int[PROGRESSION_LENGTH];
-        String[] questions = new String[numbers.length];
+        String[] numbers = new String[PROGRESSION_LENGTH];
+
 
         for (int i = 0; i < Engine.getRoundsCount(); i++) {
             int dots = RANDOM.nextInt(PROGRESSION_LENGTH);
             int number = RANDOM.nextInt(NUMBERS_RANGE);
             progressionCalculation(numbers, number, step);
-
-            for (int j = 0; j < numbers.length; j++) {
-                if (dots == j) {
-                    questions[j] = "..";
-                } else {
-                    questions[j] = String.valueOf(numbers[j]);
-                }
-            }
-            String question = String.join(" ", questions).trim();
             String correctAnswer = String.valueOf(numbers[dots]);
+
+            numbers[dots] = "..";
+            String question = String.join(" ", numbers).trim();
+
 
             rounds[i][0] = question;
             rounds[i][1] = correctAnswer;
