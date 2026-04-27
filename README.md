@@ -1,7 +1,6 @@
 # 🧠 Brain Games
-
-[![Java CI](https://github.com/rimador/java-project-61/actions/workflows/gradle.yml/badge.svg)](https://github.com/rimador/java-project-61/actions/workflows/gradle.yml)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79d2c3/maintainability)](https://codeclimate.com/github/rimador/java-project-61/maintainability)
+[![hexlet-check](https://github.com/Rimadorio/java-project-61/actions/workflows/hexlet-check.yml/badge.svg?branch=main)](https://github.com/Rimadorio/java-project-61/actions/workflows/hexlet-check.yml)
+[![SonarQube](https://github.com/Rimadorio/java-project-61/actions/workflows/build.yml/badge.svg)](https://github.com/Rimadorio/java-project-61/actions/workflows/build.yml)
 
 **Brain Games** — это набор консольных мини-игр для тренировки ума. Проект создан в рамках обучения на Hexlet и демонстрирует основы Java, работу с Gradle, Checkstyle и Git.
 
@@ -39,8 +38,12 @@ make build
 # Запустить игры
 make run
 
-https://asciinema.org/a/MJsNOykLCIoSwh83
-https://asciinema.org/a/cNZSLX8sChHvj4dc
-https://asciinema.org/a/T9W3evWCHUHIzEl5
-https://asciinema.org/a/8UWL4O8HbE3bjJ5k
-https://asciinema.org/a/LBo0pvhM7GJn0UUd
+#### 📺 Демонстрация
+
+- [Greet](https://asciinema.org/a/L3WzFOofNrpiL3R8)
+- [Even Game](https://asciinema.org/a/OIh2MPnMie8lkGb4)
+- [Calc Game](https://asciinema.org/a/YrCsxsrFbXAF8hMX)
+- [GCD Game](https://asciinema.org/a/P5TPKX5yxtOJ928C)
+- [Progression Game](https://asciinema.org/a/nyemuAottGGSW158)
+- [Prime Game](https://asciinema.org/a/lJH4jbtch1cezKPF)
+- [Exit](https://asciinema.org/a/dhUW3yGCLX1GJwRy)
