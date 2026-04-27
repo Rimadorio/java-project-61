@@ -11,7 +11,7 @@ public final class Progression {
 
 
     private Progression() {
-        System.out.println("Utility class cannot be instantiated");
+        System.out.println("Utility class cannot be instantiated"); // NOSONAR
     }
 
     public static int[] progressionCalculation(int[] numbers, int number, int step) {
@@ -38,7 +38,7 @@ public final class Progression {
                 if (dots == j) {
                     questions[j] = "..";
                 } else {
-                    questions[j] = numbers[j] + " ";
+                    questions[j] = String.valueOf(numbers[j]);
                 }
             }
             String question = String.join(" ", questions).trim();

@@ -8,7 +8,7 @@ public final class GCD {
     private static final SecureRandom RANDOM = new SecureRandom();
 
     private GCD() {
-        System.out.println("Utility class cannot be instantiated");
+        System.out.println("Utility class cannot be instantiated"); // NOSONAR
     }
 
     public static int gcdCalculation(int firstNumber, int secondNumber) {

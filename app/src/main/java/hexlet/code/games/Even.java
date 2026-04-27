@@ -9,7 +9,7 @@ public final class Even {
     private static final SecureRandom RANDOM = new SecureRandom();
 
     private Even() {
-        System.out.println("Utility class cannot be instantiated");
+        System.out.println("Utility class cannot be instantiated");  // NOSONAR
     }
 
     public static void gameEven(String playerName) {

@@ -10,4 +10,7 @@ clean:
 run:
 	./gradlew run
 
+check:
+	./gradlew checkstyleMain
+
 .PHONY: run-dist build clean run

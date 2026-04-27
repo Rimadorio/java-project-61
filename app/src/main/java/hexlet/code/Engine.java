@@ -10,7 +10,7 @@ public final class Engine {
     }
 
     private Engine() {
-        System.out.println("Utility class cannot be instantiated");
+        System.out.println("Utility class cannot be instantiated");  // NOSONAR
     }
 
     public static void runGame(String gameRule, String[][] rounds, String playerName) {

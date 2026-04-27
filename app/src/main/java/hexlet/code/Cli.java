@@ -5,7 +5,7 @@ import java.util.Scanner;
 public final class Cli {
 
     private Cli() {
-        System.out.println("Utility class cannot be instantiated");
+        System.out.println("Utility class cannot be instantiated");  // NOSONAR
     }
 
     public static String greeting(int number) {

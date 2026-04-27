@@ -11,7 +11,7 @@ public final class Calc {
 
 
     private Calc() {
-        System.out.println("Utility class cannot be instantiated");
+        System.out.println("Utility class cannot be instantiated"); // NOSONAR
     }
 
     public static int expressionResult(char symbol, int firstNumber, int secondNumber) {

@@ -11,7 +11,7 @@ public final class Prime {
 
 
     private Prime() {
-        System.out.println("Utility class cannot be instantiated");
+        System.out.println("Utility class cannot be instantiated"); // NOSONAR
     }
 
     public static boolean isPrime(int number) {
