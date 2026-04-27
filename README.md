@@ -1,4 +1,5 @@
 # 🧠 Brain Games
+
 [![hexlet-check](https://github.com/Rimadorio/java-project-61/actions/workflows/hexlet-check.yml/badge.svg?branch=main)](https://github.com/Rimadorio/java-project-61/actions/workflows/hexlet-check.yml)
 [![SonarQube](https://github.com/Rimadorio/java-project-61/actions/workflows/build.yml/badge.svg)](https://github.com/Rimadorio/java-project-61/actions/workflows/build.yml)
 
@@ -37,13 +38,15 @@ make build
 
 # Запустить игры
 make run
+```
+## 📺 Демонстрация
 
-#### 📺 Демонстрация
-
-- [Greet](https://asciinema.org/a/L3WzFOofNrpiL3R8)
-- [Even Game](https://asciinema.org/a/OIh2MPnMie8lkGb4)
-- [Calc Game](https://asciinema.org/a/YrCsxsrFbXAF8hMX)
-- [GCD Game](https://asciinema.org/a/P5TPKX5yxtOJ928C)
-- [Progression Game](https://asciinema.org/a/nyemuAottGGSW158)
-- [Prime Game](https://asciinema.org/a/lJH4jbtch1cezKPF)
-- [Exit](https://asciinema.org/a/dhUW3yGCLX1GJwRy)
+| Игра | Asciinema |
+|------|-----------|
+| Greet | [Смотреть](https://asciinema.org/a/L3WzFOofNrpiL3R8) |
+| Even | [Смотреть](https://asciinema.org/a/OIh2MPnMie8lkGb4) |
+| Calc | [Смотреть](https://asciinema.org/a/YrCsxsrFbXAF8hMX) |
+| GCD | [Смотреть](https://asciinema.org/a/P5TPKX5yxtOJ928C) |
+| Progression | [Смотреть](https://asciinema.org/a/nyemuAottGGSW158) |
+| Prime | [Смотреть](https://asciinema.org/a/lJH4jbtch1cezKPF) |
+| Exit | [Смотреть](https://asciinema.org/a/dhUW3yGCLX1GJwRy) |
