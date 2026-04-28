@@ -5,6 +5,7 @@ import hexlet.code.games.Even;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
+
 import java.util.Scanner;
 
 public class App {
@@ -15,6 +16,7 @@ public class App {
     private static final int GCD_NUMBER = 4;
     private static final int PROGRESSION_NUMBER = 5;
     private static final int PRIME_NUMBER = 6;
+    private static final int EXIT_NUMBER = 0;
 
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.\n" // NOSONAR
@@ -47,8 +49,12 @@ public class App {
             case PRIME_NUMBER:
                 Prime.primeNumber(Cli.greeting(gameNumber));
                 break;
+            case EXIT_NUMBER:
+                System.out.println("Your choice is 0. Exiting Brain games.");
+                break;
             default:
-                System.out.println("Your choice is 0. Exiting Brain games."); // NOSONAR
+                System.out.println("Error: Invalid game number entered - " + gameNumber
+                        + ".\nPlease choose a number from " + EXIT_NUMBER + " to " + PRIME_NUMBER + "."); // NOSONAR
                 break;
         }
 

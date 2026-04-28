@@ -50,4 +50,5 @@ make run
 | GCD | [Смотреть](https://asciinema.org/a/P5TPKX5yxtOJ928C) |
 | Progression | [Смотреть](https://asciinema.org/a/nyemuAottGGSW158) |
 | Prime | [Смотреть](https://asciinema.org/a/lJH4jbtch1cezKPF) |
-| Exit | [Смотреть](https://asciinema.org/a/dhUW3yGCLX1GJwRy) |
+| Exit | [Смотреть](https://asciinema.org/a/MZKNdzpeMAusWKHh) |
+| Error | [Смотреть](https://asciinema.org/a/PhAAvXouWFS9iFpR) |
